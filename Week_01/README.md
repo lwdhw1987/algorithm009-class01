@@ -4,5 +4,4 @@
 ### Priority Queue内部数据结构
 java中的priority queue基于priority heap实现，heap也是一个**完全二叉树**，并且heap的根节点是按照某种规则排序的最值。
 
-![image](https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/heap.png?raw=true)
-
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/heap.png?raw=true" width = "600" height = "544">
