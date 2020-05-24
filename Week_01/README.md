@@ -16,10 +16,10 @@ public PriorityQueue(int initialCapacity,
                      Comparator<? super E> comparator) {
 	// Note: This restriction of at least one is not actually needed,
 	// but continues for 1.5 compatibility
-	if (initialCapacity < 1)
-		throw new IllegalArgumentException();
-	this.queue = new Object[initialCapacity];
-	this.comparator = comparator;
+    if (initialCapacity < 1)
+        throw new IllegalArgumentException();
+    this.queue = new Object[initialCapacity];
+    this.comparator = comparator;
 }
 ```
 
@@ -28,32 +28,32 @@ public PriorityQueue(int initialCapacity,
 ### 添加元素
 ```java
 public boolean offer(E e) {
-	if (e == null)
-		throw new NullPointerException();
-	modCount++;
-	int i = size;
-	if (i >= queue.length)
-		grow(i + 1);
-	size = i + 1;
-	if (i == 0)
-		queue[0] = e;
-	else
-		siftUp(i, e);
-	return true;
+    if (e == null)
+        throw new NullPointerException();
+    modCount++;
+    int i = size;
+    if (i >= queue.length)
+        grow(i + 1);
+        size = i + 1;
+    if (i == 0)
+        queue[0] = e;
+    else
+        siftUp(i, e);
+    return true;
 }
 ```
 当插入元素个数超过了内部数组空间时，需要对数组扩容
 ```java
 private void grow(int minCapacity) {
-	int oldCapacity = queue.length;
-	// Double size if small; else grow by 50%
-	int newCapacity = oldCapacity + ((oldCapacity < 64) ?
-									 (oldCapacity + 2) :
-									 (oldCapacity >> 1));
-	// overflow-conscious code
-	if (newCapacity - MAX_ARRAY_SIZE > 0)
-		newCapacity = hugeCapacity(minCapacity);
-	queue = Arrays.copyOf(queue, newCapacity);
+    int oldCapacity = queue.length;
+    // Double size if small; else grow by 50%
+    int newCapacity = oldCapacity + ((oldCapacity < 64) ?
+                                        (oldCapacity + 2) :
+                                        (oldCapacity >> 1));
+    // overflow-conscious code
+    if (newCapacity - MAX_ARRAY_SIZE > 0)
+           newCapacity = hugeCapacity(minCapacity);
+    queue = Arrays.copyOf(queue, newCapacity);
 }
 ```
 当之前的容量小于64时，扩容至原来的2倍+2，否则扩容至原来的1.5倍
