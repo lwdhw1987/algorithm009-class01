@@ -93,7 +93,7 @@ public E poll() {
 	return result;
 }
 ```
-每次删除根节点的数据，此时破坏了**完全二叉树**的完整性，解决办法是将最后一个元素放到根节点上，并将末尾节点设置成null，然后调用**siftDown**方法和底层的**siftDownComparable**方法，从根节点开始，
+每次删除根节点的数据，此时破坏了**完全二叉树**的完整性，解决办法是将最后一个元素放到根节点上，并将末尾节点设置成null，然后调用**siftDown**方法和底层的**siftDownComparable**方法，从根节点开始，判断父节点和较小子节点的大小，如果父节点大于子节点就进行交换，直到父节点小于子节点或者到达叶子节点的位置。
 ```java
 private void siftDownComparable(int k, E x) {
 	Comparable<? super E> key = (Comparable<? super E>) x;
@@ -113,3 +113,14 @@ private void siftDownComparable(int k, E x) {
 	queue[k] = key;
 }
 ```
+下图所示删除节点的过程，从heap根节点获取要删除的元素，将heap最后一个节点拷贝到根节点的位置，并将原来的叶子结点设置为null，然后重复比较父节点和较小子节点的值，进行置换。完成后heap的根节点将是所有节点中key值最小的。
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/down-bubbling1.png?raw=true" width = "600" height = "400">
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/down-bubbling2.png?raw=true" width = "600" height = "400">
+
+### 时间复杂度
+查询最小值的时间复杂度为O(1)，添加元素或删除最小值的时间复杂度为O(logn)
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/complexity.png?raw=true" width = "400" height = "200">
+
