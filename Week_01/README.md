@@ -14,12 +14,12 @@ java中的priority queue基于priority heap实现，heap也是一个有序的**�
 ```java
 public PriorityQueue(int initialCapacity,
                      Comparator<? super E> comparator) {
-    // Note: This restriction of at least one is not actually needed,
-    // but continues for 1.5 compatibility
+	// Note: This restriction of at least one is not actually needed,
+	// but continues for 1.5 compatibility
 	if (initialCapacity < 1)
-        throw new IllegalArgumentException();
+		throw new IllegalArgumentException();
 	this.queue = new Object[initialCapacity];
-    this.comparator = comparator;
+	this.comparator = comparator;
 }
 ```
 
