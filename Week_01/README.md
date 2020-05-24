@@ -72,9 +72,44 @@ private void siftUpComparable(int k, E x) {
 	queue[k] = key;
 }
 ```
+下图所示插入节点(2, T)的过程，从叶子结点开始，重复与父节点的比较和替换过程，最终还原了有序性，将key值最小的(2, T)交换到了根节点，这个过程叫做up-heap bubbling。
 
 <img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/up-bubbling1.png?raw=true" width = "600" height = "400">
 
 <img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_01/up-bubbling2.png?raw=true" width = "600" height = "400">
 
-
+### 删除元素
+```java
+public E poll() {
+	if (size == 0)
+		return null;
+	int s = --size;
+	modCount++;
+	E result = (E) queue[0];
+	E x = (E) queue[s];
+	queue[s] = null;
+	if (s != 0)
+		siftDown(0, x);
+	return result;
+}
+```
+每次删除根节点的数据，此时破坏了**完全二叉树**的完整性，解决办法是将最后一个元素放到根节点上，并将末尾节点设置成null，然后调用**siftDown**方法和底层的**siftDownComparable**方法，从根节点开始，
+```java
+private void siftDownComparable(int k, E x) {
+	Comparable<? super E> key = (Comparable<? super E>) x;
+	int half = size >>> 1;        // loop while a non-leaf
+	while (k < half) {
+		int child = (k << 1) + 1; // assume left child is least
+		Object c = queue[child];
+		int right = child + 1;
+		if (right < size &&
+				((Comparable<? super E>) c).compareTo((E) queue[right]) > 0)
+			c = queue[child = right];
+		if (key.compareTo((E) c) <= 0)
+			break;
+		queue[k] = c;
+		k = child;
+	}
+	queue[k] = key;
+}
+```
