@@ -159,5 +159,5 @@ final void treeifyBin(Node<K,V>[] tab, int hash) {
         }
 ```
 
-对于***hash function***、**插入和删除、动态扩容**的具体代码分析参考[1](https://github.com/zchen96/jdk1.8-source-code-read/blob/master/notes/data-structure/HashMap.md)
+对于***hash function***、**插入和删除、动态扩容**的具体代码分析参考[这个](https://github.com/zchen96/jdk1.8-source-code-read/blob/master/notes/data-structure/HashMap.md)
 
