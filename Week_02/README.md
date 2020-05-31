@@ -24,5 +24,14 @@ Map描述了一种映射关系，如下图所示，是一组的keys和一组valu
 对于key1 != key2，如果hash(key1) == hash(key2)，就发生了hash冲突。解决hash冲突主要有2种方法，第一是***open addressing***，第二是***separate chaining***。
 
 假设Map中有n个元素，HashTable key的容量为N，当load factor = n / N比较大时，HashTable更容易发生Hash冲突。
-先看***separate chaining***，
+先看***separate chaining***，HashTable的每个索引对应位置的bucket存放的是一个单链表，当***hash function***对key的计算比较均匀，单链表的平均长度k = load factor = n / N。HashTable插入数据的时间复杂度为O(1)，查找或删除操作的时间复杂度为o(k)。
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_02/separate_chaining.png?raw=true" width = "500" height = "250">
+
+再看***open addressing***，最基本的处理方法是**线性探测**，
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_02/linear_probing.png?raw=true" width = "500" height = "150">
+
+
+
 
