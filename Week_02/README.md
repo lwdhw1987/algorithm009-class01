@@ -42,8 +42,122 @@ Map描述了一种映射关系，如下图所示，是一组的keys和一组valu
 ### 动态扩容
 ***loader factor***越大，HashTable中空闲位置越少，冲突概率越大。当HashTable的***loader factor***高于某个值，启动动态扩容，将HashTable的容量翻倍，重新计算HashTable索引，并且搬移数据，用摊还分析法分析，动态扩容的复杂度为O(1)。为了解决一次行扩容耗时多的情况，可以先扩容而不搬移数据，每次插入一个新数据的时候再搬移一个旧数据，这样将一次性的数据搬移分摊到每次新数据的插入过程里，在任何时刻，插入数据的时间复杂度都是O(1)。
 
+### Java中的HashMap实现
+#### 构造函数
+```java
+public HashMap(int initialCapacity, float loadFactor) {
+        if (initialCapacity < 0)
+            throw new IllegalArgumentException("Illegal initial capacity: " +
+                                               initialCapacity);
+        if (initialCapacity > MAXIMUM_CAPACITY)
+            initialCapacity = MAXIMUM_CAPACITY;
+        if (loadFactor <= 0 || Float.isNaN(loadFactor))
+            throw new IllegalArgumentException("Illegal load factor: " +
+                                               loadFactor);
+        this.loadFactor = loadFactor;
+        this.threshold = tableSizeFor(initialCapacity);
+    }
+}
+```
 
+#### 添加元素，键-值对
+```java
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+        Node<K,V>[] tab; Node<K,V> p; int n, i;
+        if ((tab = table) == null || (n = tab.length) == 0)
+            // 当哈希表数组为 null 或者长度为 0 时，初始化哈希表数组
+            n = (tab = resize()).length;
+        if ((p = tab[i = (n - 1) & hash]) == null)
+            // 没有出现哈希碰撞直接将新节点插入对应的桶内
+            tab[i] = newNode(hash, key, value, null);
+        // 哈希碰撞
+        else {
+            Node<K,V> e; K k;
+            if (p.hash == hash &&
+                ((k = p.key) == key || (key != null && key.equals(k))))
+                e = p;
+            else if (p instanceof TreeNode)
+                // 如果是树节点，走树节点插入流程
+                e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+            else {
+                // 链表处理流程
+                for (int binCount = 0; ; ++binCount) {
+                    if ((e = p.next) == null) {
+                        p.next = newNode(hash, key, value, null);
+                        // 如果当前链表中的元素大于树化的阈值，进行链表转树的操作
+                        if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+                            treeifyBin(tab, hash);
+                        break;
+                    }
+                    // 如果 key 已经存在，直接结束循环
+                    if (e.hash == hash &&
+                        ((k = e.key) == key || (key != null && key.equals(k))))
+                        break;
+                    p = e;
+                }
+            }
+            // 如果 key 重复则更新 key 值
+            if (e != null) { // existing mapping for key
+                V oldValue = e.value;
+                if (!onlyIfAbsent || oldValue == null)
+                    e.value = value;
+                afterNodeAccess(e);
+                return oldValue;
+            }
+        }
+        ++modCount;
+        // 如果键值对个数大于阈值时（capacity * load factor），进行扩容操作
+        if (++size > threshold)
+            resize();
+        afterNodeInsertion(evict);
+        return null;
+    }
+```
+HashMap底层采用单链表解决hash冲突，一旦链表超过一定长度，就会转换成红黑树。
+```java
+final void treeifyBin(Node<K,V>[] tab, int hash) {
+        int n, index; Node<K,V> e;
+        if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)
+            resize();
+        else if ((e = tab[index = (n - 1) & hash]) != null) {
+            TreeNode<K,V> hd = null, tl = null;
+            do {
+                TreeNode<K,V> p = replacementTreeNode(e, null);
+                if (tl == null)
+                    hd = p;
+                else {
+                    p.prev = tl;
+                    tl.next = p;
+                }
+                tl = p;
+            } while ((e = e.next) != null);
+            if ((tab[index] = hd) != null)
+                hd.treeify(tab);
+        }
+    }
+		
+ static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
+        TreeNode<K,V> parent;  // red-black tree links
+        TreeNode<K,V> left;
+        TreeNode<K,V> right;
+        TreeNode<K,V> prev;    // needed to unlink next upon deletion
+        boolean red;
+        TreeNode(int hash, K key, V val, Node<K,V> next) {
+            super(hash, key, val, next);
+        }
 
+        /**
+         * Returns root of tree containing this node.
+         */
+        final TreeNode<K,V> root() {
+            for (TreeNode<K,V> r = this, p;;) {
+                if ((p = r.parent) == null)
+                    return r;
+                r = p;
+            }
+        }
+```
 
-
+对于***hash function***、**插入和删除、动态扩容**的具体代码分析参考[1](https://github.com/zchen96/jdk1.8-source-code-read/blob/master/notes/data-structure/HashMap.md)
 
