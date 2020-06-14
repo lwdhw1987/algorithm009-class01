@@ -46,7 +46,7 @@ int binarySearch(vector<int>& nums, int target, int left, int right){
   }
 }
 ```
-模版2代码采用左闭右开的的表示方式，查找区间表示为[L, R)，划分子问题后，左右区间分别为[L, mid), [mid + 1, R)。**查找过程只能接触到左边界**, 当查找区间的长度为2，且nums[mid] < target，查找子区间变为[R, R)或者[L, L)，此时已经满足递归结束条件，但是仍要判断nums[R] == target或者nums[L] == target。
+模版2代码采用左闭右开的的表示方式，查找区间表示为[L, R)，划分子问题后，左右区间分别为[L, mid), [mid + 1, R)。**查找过程只能接触到左边界**, 当查找区间的长度为2，且nums[mid] != target，查找子区间变为[R, R)或者[L, L)，此时已经满足递归结束条件，但是仍要判断nums[R] == target或者nums[L] == target。
 
 - 模版3
 ```cpp
