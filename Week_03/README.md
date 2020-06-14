@@ -30,7 +30,7 @@ int binarySearch(vector<int>& nums, int target, int left, int right){
 // 初始值left = 0, right = nums.size()
 int binarySearch(vector<int>& nums, int target, int left, int right){
   if (left == nums.size()) return -1;
-  if (left == right && nums[left] == target) {
+  if (left == right) {
     return (nums[left] == target ? left : -1);
   }
   
