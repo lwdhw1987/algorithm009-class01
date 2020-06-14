@@ -72,3 +72,65 @@ int binarySearch(vector<int>& nums, int target){
 
 总结，从二分查找过程对左右边界的访问可以分成三种模版，对应不同的代码需求。对于模版2和模版3要小心处理边界访问。
 
+### 回溯与递归
+从n皇后问题学习递归与回溯，递归函数包含4个要素：
+1. 结束条件
+2. 计算逻辑
+3. 进入下一层计算，保存计算结果
+4. 回溯阶段，清除当前状态，为下一次计算做准备
+
+看n皇后问题的递归解：
+```cpp
+class Solution {
+public:
+    // a表示列冲突，b表示对角线冲突，c表示反对角线冲突
+    void put(int row, int n, vector<vector<string>>& ans, vector<string>& solve, 
+            int a, int b, int c) {
+        if (row == n) {
+            // 保存解法
+            ans.push_back(solve);
+            return;
+        }
+
+        // 在当前行放置Queen, 有多种可能
+        // 取反再取低n位，bit = 1表示有效位
+        int valid = ~(a | b | c) & ((1 << n) - 1);
+        while (valid) {
+            // 只保留最低有效位
+            int leftmost = valid & (-valid);
+            int i = log2(leftmost);
+            string s(n, '.');
+            s[n - 1 - i] = 'Q';
+            solve.push_back(s);
+            // 去下一行放置Queen
+            put(row + 1, n, ans, solve, a | leftmost, (b | leftmost) << 1, 
+                (c | leftmost) >> 1);
+            
+            // 回溯，清除当前解，准备下一个
+            solve.pop_back();
+            // 清除最低有效位, 准备处理下一个
+            valid = valid & (valid - 1);
+        }
+    }
+
+    vector<vector<string>> solveNQueens(int n) {
+        vector<vector<string>> ans;
+        vector<string> solve;
+        put(0, n, ans, solve, 0, 0, 0);
+        return ans;
+    }
+};
+```
+
+参数`vector<string>& solve`用于保存中间状态，参数`vector<vector<string>>& ans`用于保存最终解。递归是一层一层深入的，每一层都要暂存中间状态，直到递归触底返回，这里的触底就是满足递归结束条件。下图是一个递归执行过程的示意图：
+  
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_03/recursion.jpeg" width = "500" height = "500">
+  
+递归从1开始，然后到2，再到3，层层深入，每一层都可能有多个中间状态，比如状态2、6、8或者3、4、5都是某一层的中间状态，当满足递归条件时，需要把当前的所有中间状态保存到最终解ans里，在n皇后问题中就对应着每一层放置Queen的方法。然后逐层将中间状态清除，比如1、2、3是一个解，然后清除中间状态3，回溯到中间状态2，然后再递归到中间状态4，如果又满足条件，就保存到最终解。当所有中间状态都遍历完成后，整个递归的中间状态都会清空。而所需答案都保存在最终解ans里。在代码中所有中间状态都是以引用参数的形式`vector<string>& solve`逐层传递下去的，因此需要开发者自己清除中间状态，这样的好处是节省内存，避免申请过多的临时变量。如果采用传值参数`vector<string> solve`的方式，当本层递归结束时，开发者不用自己清除中间状态，但要在本层内不同中间状态之间进行替换，且函数参数申请了额外的临时缓存。
+  
+  
+  
+  
+
+
+
