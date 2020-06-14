@@ -22,7 +22,7 @@
 ```cpp
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+    int search(vector<int>& nums) {
         int left = 0;
         int right = nums.size() - 1;
 
