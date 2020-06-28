@@ -16,4 +16,4 @@
 ### 解决子问题
 ##### 吉他
 
-<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/gitar.png" width = "400" height = "300">
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/gitar.png" width = "300" height = "200">
