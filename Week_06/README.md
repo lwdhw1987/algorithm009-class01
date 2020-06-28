@@ -11,9 +11,32 @@
 <img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/matrix.png" width = "500" height = "400">
 
 **将问题拆分成子问题:** 分成两个维度来看待，第一个维度代表**商品的种类i**，第二个维度代表**背包的容量j**(1到Capacity)，这两个维度组成了一个二维矩阵，
-矩阵中的每个坐标代表了在**背包容量为j**时，在**商品0到商品i**中，能装入商品的最大价值。
+矩阵中的每个坐标代表了在**背包容量为j**时，在**商品0到商品i**中，能装入商品的**最大价值**，定义为**dp[i][j]**。
 
 ### 解决子问题
-##### 吉他
+#### 吉他
+只有一种商品，且吉他的重量为1磅，所以哪一种背包容量都可以装下，且能装下的最大价值都是$1500。
 
 <img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/gitar.png" width = "300" height = "200">
+
+#### 音响
+音响的重量是4磅，所以只有背包容量为4时才放的下，这时有两种选择**放入音响**和**不放音响**，如果不放则背包的最大价值还是dp[i-1][j]。如果放入，
+那么音响会占满背包空间，无法再放入其他商品，此时的背包内的最大价值就是音响价值$3000。
+当背包容量小于4时，dp[i][j]保持dp[i-1][j]的状态不变。
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/laptop1.png" width = "300" height = "200">
+
+#### 笔记本电脑
+笔记本的重量是3磅，当背包容量小于2时，dp[i][j]保持dp[i-1][j]的状态不变。
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/laptop2.png" width = "300" height = "200">
+
+当背包容量为3时，可以选择**放入笔记本电脑**或**不放**，如果不放则背包的最大价值还是dp[i-1][j]，否则，笔记本的重量占满背包空间，此时背包的最大价值
+是笔记本电脑的价值$2000
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/laptop2.png" width = "300" height = "200">
+
+同样，当背包容量为4时，如果不放则背包的最大价值还是dp[i-1][j]，否则选择放入笔记本电脑，背包还剩余1磅的空间，而之前求解过dp[i][1]，就是当背包容量
+
+
+
