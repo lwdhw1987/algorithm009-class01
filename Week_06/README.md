@@ -8,7 +8,12 @@
 ### 子问题拆解
 <img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/sub_problem.png" width = "300" height = "200">
 
-**将问题拆分成子问题:** 分成两个维度来看待，第一个维度代表**商品的种类**，第二个维度代表**背包的容量**(1到Capacity)，这两个维度组成了一个二维矩阵，
-矩阵中的每个坐标
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/matrix.png" width = "500" height = "400">
 
-<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/matrix.png" width = "300" height = "200">
+**将问题拆分成子问题:** 分成两个维度来看待，第一个维度代表**商品的种类i**，第二个维度代表**背包的容量j**(1到Capacity)，这两个维度组成了一个二维矩阵，
+矩阵中的每个坐标代表了在**背包容量为j**时，在**商品0到商品i**中，能装入商品的最大价值。
+
+### 解决子问题
+##### 吉他
+
+<img src="https://github.com/lwdhw1987/algorithm009-class01/blob/master/Week_06/gitar.png" width = "400" height = "300">
