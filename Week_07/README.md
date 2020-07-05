@@ -203,5 +203,54 @@ vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
 }
 ```
 
+# 并查集的实现方式，路径减半，带权重合并
+### - 关于并查集，普林斯顿算法课有很好的[讲解](https://algs4.cs.princeton.edu/15uf/)
+```cpp
+// class Union中成员方法
+int Find(int p) {
+    while (p != id[p]) {
+        id[p] = id[id[p]]; // 路径减半，当前节点的父节点指向祖父节点
+        p = id[p];
+    }
+    return p;
+}
+
+bool connected(int p, int q) {
+    return Find(p) == Find(q);
+}
+
+// 权重小的集合被权重大的集合吞并
+void Union(int p, int q) {
+    int rootP = Find(p);
+    int rootQ = Find(q);
+    if (rootP == rootQ) return;
+    if (size[rootP] < size[rootQ]) {
+        id[rootP] = rootQ;
+        size[rootQ] += size[rootP];
+    }
+    else {
+        id[rootQ] = rootP;
+        size[rootP] += size[rootQ];
+    }
+}
+```
+并查集的路径压缩还有更彻底的方式：
+```cpp
+int Find(int p) {
+    int root = p;
+    while (root != id[root]) {
+        root = id[root];
+    }
+    
+    // 将所有节点都指向根节点
+    while (p != root) {
+        int tmp = id[p]; // 保存父节点
+        id[p] = root;    // 更新父节点
+        p = tmp;         // 准备遍历上一级
+    }
+ 
+    return root;
+}
+```
 
         
