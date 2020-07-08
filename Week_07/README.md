@@ -251,6 +251,4 @@ int Find(int p) {
  
     return root;
 }
-```
-
-        
+```        
