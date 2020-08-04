@@ -10,9 +10,9 @@
 [树的遍历 Demo](https://visualgo.net/zh/bst)
 
 # 练习题
-242.[有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/description/)
+[有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/description/)
 
-49.[字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
+[字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
 
 [二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
 
