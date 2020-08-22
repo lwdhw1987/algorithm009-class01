@@ -7,10 +7,6 @@
 
 [题解](https://leetcode-cn.com/problems/regular-expression-matching/solution/ji-yu-guan-fang-ti-jie-gen-xiang-xi-de-jiang-jie-b/)
 
-[通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)
-
-[不同的子序列](https://leetcode-cn.com/problems/distinct-subsequences/)
-
 [Boyer-Moore 算法](https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html)
 
 [Sunday 算法](https://blog.csdn.net/u012505432/article/details/52210975)
@@ -78,7 +74,7 @@
 
 [验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
 
-[验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/)
+[验证回文字符串Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/)
 
 [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
@@ -87,3 +83,11 @@
 [编辑距离](https://leetcode-cn.com/problems/edit-distance/)
 
 [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+
+[通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)
+
+[不同的子序列](https://leetcode-cn.com/problems/distinct-subsequences/)
+
+[同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/)
+
+[不同路径2](https://leetcode-cn.com/problems/unique-paths-ii/)
