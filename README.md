@@ -5,6 +5,8 @@
 
 ### 深度优先 + 回溯
 [24点游戏](https://leetcode-cn.com/problems/24-game/);
+[字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/);
+
 
 
 
