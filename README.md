@@ -7,6 +7,9 @@
 [24点游戏](https://leetcode-cn.com/problems/24-game/) / [字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/) /
 [递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/)
 
+### 位运算
+[剑指 Offer 56 - I. 数组中数字出现的次数](https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/) /
+
 ### 字符串算法
 [重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/)
 
