@@ -19,6 +19,8 @@
 
 [字符串匹配的 KMP 算法](http://www.ruanyifeng.com/blog/2013/05/Knuth–Morris–Pratt_algorithm.html)
 
+[图解KMP算法](https://leetcode-cn.com/problems/shortest-palindrome/solution/tu-jie-kmpsuan-fa-by-yangbingjie/)
+
 # 编程练习
 [不同路径](https://leetcode-cn.com/problems/unique-paths/)
 
