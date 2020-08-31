@@ -5,7 +5,7 @@
 
 ### 深度优先 + 回溯
 [24点游戏](https://leetcode-cn.com/problems/24-game/) / [字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/) /
-[递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/)
+[递增子序列](https://leetcode-cn.com/problems/increasing-subsequences/) / [钥匙与房间](https://leetcode-cn.com/problems/keys-and-rooms/) /
 
 ### 位运算
 [剑指 Offer 56 - I. 数组中数字出现的次数](https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/) /
