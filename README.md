@@ -25,6 +25,8 @@
 ### 字符串算法
 [重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/)
 
+### 动态规划
+[预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
 
 
 
