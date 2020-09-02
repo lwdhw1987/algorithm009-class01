@@ -26,7 +26,10 @@
 [重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/)
 
 ### 动态规划
-[预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
+[预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) / [最小花费爬楼梯](http://leetcode-cn.com/problems/min-cost-climbing-stairs) / 
+[不同路径](http://leetcode-cn.com/problems/unique-paths/) / [最小路径和](http://leetcode-cn.com/problems/minimum-path-sum/) / 
+[最大子序和](http://leetcode-cn.com/problems/maximum-subarray/) / [乘积最大子数组](http://leetcode-cn.com/problems/maximum-product-subarray/) / 
+[买卖股票的最佳时机3](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) / [买卖股票的最佳时机](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) / [买卖股票的最佳时机2](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 
 
