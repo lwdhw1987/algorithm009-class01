@@ -12,7 +12,7 @@
 [在二叉树中分配硬币](http://leetcode-cn.com/problems/distribute-coins-in-binary-tree/) / [括号生成](http://leetcode-cn.com/problems/generate-parentheses/) / 
 [N皇后](http://leetcode-cn.com/problems/n-queens/) / [N皇后2](http://leetcode-cn.com/problems/n-queens-ii/) / 
 [解数独](http://leetcode-cn.com/problems/sudoku-solver/) / [不同路径3](http://leetcode-cn.com/problems/unique-paths-iii/) / 
-[单词搜索](http://leetcode-cn.com/problems/word-search/)
+[单词搜索](http://leetcode-cn.com/problems/word-search/) / [组合总和](https://leetcode-cn.com/problems/combination-sum/)
 
 ### 分治
 [搜索二维矩阵](http://leetcode-cn.com/problems/search-a-2d-matrix-ii/) / [合并K个排序链表](http://leetcode-cn.com/problems/merge-k-sorted-lists) / 
