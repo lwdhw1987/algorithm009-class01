@@ -31,12 +31,8 @@
 [最大子序和](http://leetcode-cn.com/problems/maximum-subarray/) / [乘积最大子数组](http://leetcode-cn.com/problems/maximum-product-subarray/) / 
 [买卖股票的最佳时机3](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) / [买卖股票的最佳时机](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) / [买卖股票的最佳时机2](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
-
-
-
-
-
-
+### 并查集
+[冗余连接2](https://leetcode-cn.com/problems/redundant-connection-ii/) /
 
 
 
