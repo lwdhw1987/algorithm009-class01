@@ -1,7 +1,28 @@
 ## 毕业刷题路线
 
 ### 基础
-[两数之和]() / [有效的括号]() / [字符串解码]() / [LRU 缓存机制]()
+[两数之和](http://leetcode-cn.com/problems/two-sum) / [有效的括号](http://leetcode-cn.com/problems/valid-parentheses/) / 
+[字符串解码](http://leetcode-cn.com/problems/decode-string/) / [LRU 缓存机制](http://leetcode-cn.com/problems/lru-cache/submissions/) / 
+[实现Trie](http://leetcode-cn.com/problems/implement-trie-prefix-tree/) / 
+[添加与搜索单词 - 数据结构设计](http://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) / 
+[单词搜索2](http://leetcode-cn.com/problems/word-search-ii/) / [找不同](http://leetcode-cn.com/problems/find-the-difference/) / 
+[单词规律](http://leetcode-cn.com/problems/word-pattern/) / 
+[字符串中的第一个唯一字符](http://leetcode-cn.com/problems/first-unique-character-in-a-string) / 
+[无重复字符的最长子串](http://leetcode-cn.com/problems/longest-substring-without-repeating-characters) / 
+[最小覆盖子串](http://leetcode-cn.com/problems/minimum-window-substring/) / [合并两个有序链表](http://leetcode-cn.com/problems/merge-two-sorted-lists) / 
+[环形链表](http://leetcode-cn.com/problems/linked-list-cycle) / 
+[环形链表2](http://leetcode-cn.com/problems/linked-list-cycle-ii) / [反转链表](http://leetcode-cn.com/problems/reverse-linked-list) /
+[反转链表2](http://leetcode-cn.com/problems/reverse-linked-list-ii) / [旋转链表](http://leetcode-cn.com/problems/rotate-list) / 
+[排序链表](http://leetcode-cn.com/problems/sort-list/) / [链表中倒数第 k 个节点](http://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) / 
+[两两交换链表中的节点](http://leetcode-cn.com/problems/swap-nodes-in-pairs) / 
+[按奇偶排序数组](http://leetcode-cn.com/problems/sort-array-by-parity/) / [按奇偶排序数组 II ](http://leetcode-cn.com/problems/sort-array-by-parity-ii/) / 
+[有序数组的平方](http://leetcode-cn.com/problems/squares-of-a-sorted-array/) / [山脉数组的峰顶索引](http://leetcode-cn.com/problems/peak-index-in-a-mountain-array) / 
+[搜索旋转排序数组](http://leetcode-cn.com/problems/search-in-rotated-sorted-array) / 
+[搜索旋转排序数组2](http://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/) / 
+[寻找旋转排序数组中的最小值](http://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/) / 
+[寻找旋转排序数组中的最小值2](http://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) / 
+[搜索二维矩阵](http://leetcode-cn.com/problems/search-a-2d-matrix) / [等式方程的可满足性](http://leetcode-cn.com/problems/satisfiability-of-equality-equations/) / 
+[朋友圈](http://leetcode-cn.com/problems/friend-circles/) / [账户合并](http://leetcode-cn.com/problems/accounts-merge/) 
 
 ### 深度优先 + 回溯
 [24点游戏](https://leetcode-cn.com/problems/24-game/) / [字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/) /
