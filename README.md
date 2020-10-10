@@ -51,6 +51,27 @@
 [不同路径](http://leetcode-cn.com/problems/unique-paths/) / [最小路径和](http://leetcode-cn.com/problems/minimum-path-sum/) / 
 [最大子序和](http://leetcode-cn.com/problems/maximum-subarray/) / [乘积最大子数组](http://leetcode-cn.com/problems/maximum-product-subarray/) / 
 [买卖股票的最佳时机3](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) / [买卖股票的最佳时机](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) / [买卖股票的最佳时机2](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+[买卖股票的最佳时机3](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) / 
+[买卖股票的最佳时机4](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/) / 
+[最佳买卖股票时机含冷冻期](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) / 
+[买卖股票的最佳时机含手续费](http://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee) /
+[零钱兑换](http://leetcode-cn.com/problems/coin-change) / [零钱兑换2](http://leetcode-cn.com/problems/coin-change-2) /
+[编辑距离](http://leetcode-cn.com/problems/edit-distance) / [不同的子序列](http://leetcode-cn.com/problems/distinct-subsequences/) / 
+[柱状图中最大矩形](http://leetcode-cn.com/problems/largest-rectangle-in-histogram/) / [最大矩形](http://leetcode-cn.com/problems/maximal-rectangle/) / 
+[最大正方形](http://leetcode-cn.com/problems/maximal-square/) / [最低票价](http://leetcode-cn.com/problems/minimum-cost-for-tickets/) / 
+[区域和检索 - 数组不可变](http://leetcode-cn.com/problems/range-sum-query-immutable/) / 
+[二维区域和检索 - 矩阵不可变](http://leetcode-cn.com/problems/range-sum-query-2d-immutable/) / 
+[最长上升子序列](http://leetcode-cn.com/problems/longest-increasing-subsequence) / [鸡蛋掉落](http://leetcode-cn.com/problems/super-egg-drop/)
+
+
+
+
+
+
+
+
+
+
 
 ### 并查集
 [冗余连接2](https://leetcode-cn.com/problems/redundant-connection-ii/) /
